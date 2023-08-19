@@ -101,7 +101,7 @@ class Api {
 }
 
 const api = new Api(
-  "http://localhost:3001",
+  "http://localhost:3000",
   `Bearer ${localStorage.jwt}`
   // "https://mesto.nomoreparties.co/v1/cohort-61",
   // "0811e36d-148a-4352-a51a-0b6cc8b0cc05"
