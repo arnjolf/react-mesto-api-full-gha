@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { api } from "../utils/Api";
-import Footer from "./Footer/Footer";
 import Main from "./Main/Main";
 import PopupWithForm from "./PopupWithForm/PopupWithForm";
 import ImagePopup from "./ImagePopup/ImagePopup";

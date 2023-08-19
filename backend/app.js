@@ -19,7 +19,7 @@ const NotFoundError = require('./errors/NotFoundError');
 const { PORT = 3000 } = process.env;
 
 const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutes
+  windowMs: 15 * 60 * 1000,
   max: 150,
   standardHeaders: true,
   legacyHeaders: false,
