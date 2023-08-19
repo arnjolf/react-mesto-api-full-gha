@@ -1,0 +1,4 @@
+.popup__image-box {
+  display: flex;
+  position: relative;
+}

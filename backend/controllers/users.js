@@ -143,3 +143,29 @@ module.exports.login = (req, res, next) => {
       next(err);
     });
 };
+
+// module.exports.login = (req, res) => {
+//   const { email, password } = req.body;
+
+//   User.findOne({ email })
+//     .then((user) => {
+//       if (!user) {
+//         return Promise.reject(new Error('Неправильные почта или пароль'));
+//       }
+
+//       return bcrypt.compare(password, user.password);
+//     })
+//     // eslint-disable-next-line consistent-return
+//     .then((matched) => {
+//       if (!matched) {
+//         // хеши не совпали — отклоняем промис
+//         return Promise.reject(new Error('Неправильные почта или пароль'));
+//       }
+
+//       // аутентификация успешна
+//       res.send({ message: 'Всё верно!' });
+//     })
+//     .catch((err) => {
+//       res.status(401).send({ message: err.message });
+//     });
+// };

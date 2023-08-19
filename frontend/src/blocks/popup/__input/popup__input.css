@@ -1,0 +1,23 @@
+.popup__input {
+  margin: 0 0 5px;
+  height: 14px;
+  border: none;
+  padding: 0 0 13px 0;
+  outline: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17px;
+  letter-spacing: 0em;
+}
+
+/* .popup__input:last-of-type {
+  margin: 0 0 48px 0;
+} */
+
+/* @media (max-width: 698px) {
+  .popup__input:last-of-type {
+    margin: 0 0 41px 0;
+  }
+} */
