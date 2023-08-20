@@ -28,8 +28,7 @@ const limiter = rateLimit({
 const app = express();
 app.use(
   cors({
-    origin: '*',
-    // eslint-disable-next-line comma-dangle
+    origin: ['http://localhost:3001', 'http://pomenyat'],
   })
 );
 app.use(express.json());

@@ -60,6 +60,7 @@ function App() {
       api
         .getUser()
         .then((res) => {
+          console.log(res);
           setCurrentUser(res);
         })
         .catch((err) => {
@@ -175,8 +176,9 @@ function App() {
     authorize(formValue.email, formValue.password)
       .then((data) => {
         console.log(data);
-        console.log(localStorage.jwt);
         if (data.token) {
+          localStorage.setItem("jwt", data.token);
+          console.log(localStorage.jwt);
           api.getUser().then((res) => {
             console.log(res);
           });
