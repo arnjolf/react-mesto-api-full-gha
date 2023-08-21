@@ -32,7 +32,7 @@ app.use(
       'http://localhost:3001',
       'https://front-mesto-arnjolff.nomoreparties.sbs',
     ],
-  })
+  }),
 );
 app.use(express.json());
 app.use(helmet());
