@@ -28,7 +28,10 @@ const limiter = rateLimit({
 const app = express();
 app.use(
   cors({
-    origin: ['http://localhost:3001', 'http://pomenyat'],
+    origin: [
+      'http://localhost:3001',
+      'https://front-mesto-arnjolff.nomoreparties.sbs/',
+    ],
   })
 );
 app.use(express.json());
