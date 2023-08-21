@@ -60,7 +60,7 @@ app.use(() => {
 });
 app.use(errors());
 app.use(errHandler);
-mongoose.connect(`${process.env.DB_ADRESS}`);
+mongoose.connect('mongodb://127.0.0.1:27017/mestodb');
 
 app.listen(PORT, () => {
   // eslint-disable-next-line no-console
