@@ -30,7 +30,7 @@ app.use(
   cors({
     origin: [
       'http://localhost:3001',
-      'https://front-mesto-arnjolff.nomoreparties.sbs/',
+      'https://front-mesto-arnjolff.nomoreparties.sbs',
     ],
   })
 );
