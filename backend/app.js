@@ -3,18 +3,18 @@ const express = require('express');
 const mongoose = require('mongoose');
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
-const { errors } = require('celebrate');
+// const { errors } = require('celebrate');
 const cors = require('cors');
 const router = require('./routes/index');
-const { requestLogger, errorLogger } = require('./middlewares/logger');
-const { login, createUser } = require('./controllers/users');
-const auth = require('./middlewares/auth');
-const errHandler = require('./middlewares/centralizedError');
-const {
-  createUserValidate,
-  loginValidate,
-} = require('./middlewares/validator');
-const NotFoundError = require('./errors/NotFoundError');
+// const { requestLogger, errorLogger } = require('./middlewares/logger');
+// const { login, createUser } = require('./controllers/users');
+// const auth = require('./middlewares/auth');
+// const errHandler = require('./middlewares/centralizedError');
+// const {
+//   createUserValidate,
+//   loginValidate,
+// } = require('./middlewares/validator');
+// const NotFoundError = require('./errors/NotFoundError');
 
 const { PORT = 3000 } = process.env;
 
@@ -38,28 +38,14 @@ app.use(express.json());
 app.use(helmet());
 app.use(limiter);
 
-app.use(requestLogger);
-
 app.get('/crash-test', () => {
   setTimeout(() => {
     throw new Error('Сервер сейчас упадёт');
   }, 0);
 });
 
-app.post('/signin', loginValidate, login);
-app.post('/signup', createUserValidate, createUser);
-
-app.use(auth);
-
 app.use('/', router);
 
-app.use(errorLogger);
-
-app.use(() => {
-  throw new NotFoundError('Неправильный адрес');
-});
-app.use(errors());
-app.use(errHandler);
 mongoose.connect('mongodb://127.0.0.1:27017/mestodb');
 
 app.listen(PORT, () => {
