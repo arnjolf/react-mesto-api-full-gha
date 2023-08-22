@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { errors } = require('celebrate');
 const auth = require('../middlewares/auth');
 const cardsRouter = require('./cards');
 const usersRouter = require('./users');
@@ -9,7 +10,6 @@ const {
 } = require('../middlewares/validator');
 const NotFoundError = require('../errors/NotFoundError');
 const { requestLogger, errorLogger } = require('../middlewares/logger');
-const { errors } = require('celebrate');
 const errHandler = require('../middlewares/centralizedError');
 
 router.use(requestLogger);
