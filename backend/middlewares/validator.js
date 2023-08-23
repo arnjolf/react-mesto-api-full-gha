@@ -42,7 +42,7 @@ const updateUserValidate = celebrate({
 
 const updateUserAvatarValidate = celebrate({
   body: Joi.object().keys({
-    avatar: Joi.string().custom(validatorUrl),
+    avatar: Joi.string().custom(validatorUrl).required(),
   }),
 });
 
@@ -55,19 +55,19 @@ const createCardValidate = celebrate({
 
 const deleteCardValidate = celebrate({
   params: Joi.object().keys({
-    cardId: Joi.string().hex().length(24),
+    cardId: Joi.string().hex().length(24).required(),
   }),
 });
 
 const likeCardValidate = celebrate({
   params: Joi.object().keys({
-    cardId: Joi.string().hex().length(24),
+    cardId: Joi.string().hex().length(24).required(),
   }),
 });
 
 const dislikeCardValidate = celebrate({
   params: Joi.object().keys({
-    cardId: Joi.string().hex().length(24),
+    cardId: Joi.string().hex().length(24).required(),
   }),
 });
 
