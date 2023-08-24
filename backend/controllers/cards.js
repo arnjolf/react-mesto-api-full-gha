@@ -19,10 +19,9 @@ module.exports.deleteCard = (req, res, next) => {
       if (card.owner.valueOf() !== req.user._id) {
         throw new ForbiddenError('У вас нет прав доступа');
       }
-      Card.deleteOne(card).then(() => {
+      return Card.deleteOne(card).then(() => {
         res.send({ data: card });
       });
-      return 0;
     })
     .catch((err) => {
       if (err instanceof mongoose.Error.CastError) {
